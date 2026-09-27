@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flow Field Theremin</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="canvas"></canvas>
+
+  <!-- Instructions overlay, shown automatically on load -->
+  <div id="instructions" class="overlay">
+    <div class="panel">
+      <h1>Flow Field Theremin</h1>
+      <p>
+        Thousands of particles drift through an invisible field of swirling noise.
+        Move your mouse (or finger) across the canvas to bend the field and play a synthesizer —
+        your <strong>horizontal</strong> position controls pitch, and your
+        <strong>vertical</strong> position controls filter brightness.
+      </p>
+      <ul>
+        <li><strong>Move / drag</strong> — steer the particle flow and play notes</li>
+        <li><strong>Click / tap</strong> — burst of particles + a plucked note</li>
+        <li>Use the control panel (top-right) to reshape the system live</li>
+      </ul>
+      <button id="startBtn">Enter &amp; Enable Audio</button>
+      <p class="hint">Audio requires a click to start (browser policy).</p>
+    </div>
+  </div>
+
+  <!-- Control panel -->
+  <div id="controls" class="controls hidden">
+    <h2>Controls</h2>
+
+    <label>
+      Particle Count <span id="particleCountVal"></span>
+      <input type="range" id="particleCount" min="100" max="4000" step="50" value="1500" />
+    </label>
+
+    <label>
+      Noise Scale <span id="noiseScaleVal"></span>
+      <input type="range" id="noiseScale" min="1" max="30" step="1" value="12" />
+    </label>
+
+    <label>
+      Flow Speed <span id="flowSpeedVal"></span>
+      <input type="range" id="flowSpeed" min="0.2" max="5" step="0.1" value="1.5" />
+    </label>
+
+    <label>
+      Trail Fade <span id="trailFadeVal"></span>
+      <input type="range" id="trailFade" min="1" max="40" step="1" value="8" />
+    </label>
+
+    <label>
+      Hue <span id="hueVal"></span>
+      <input type="range" id="hue" min="0" max="360" step="1" value="190" />
+    </label>
+
+    <label>
+      Master Volume <span id="volumeVal"></span>
+      <input type="range" id="volume" min="0" max="100" step="1" value="35" />
+    </label>
+
+    <label class="checkbox-row">
+      <input type="checkbox" id="audioToggle" checked />
+      Enable Audio
+    </label>
+
+    <button id="resetBtn">Reset Particles</button>
+    <button id="helpBtn">Show Instructions</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

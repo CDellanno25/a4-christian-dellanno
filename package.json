@@ -1,0 +1,12 @@
+{
+  "name": "a4-flow-field-theremin",
+  "version": "1.0.0",
+  "description": "Assignment 4 - Creative Coding: a generative flow-field particle system (Canvas) that doubles as an audio-reactive theremin (Web Audio API).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
